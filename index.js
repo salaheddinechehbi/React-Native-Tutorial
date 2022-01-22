@@ -13,4 +13,4 @@ import Modal from './screens/Modal';
 import Home from './screens/Home';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Home);
+AppRegistry.registerComponent(appName, () => App);
