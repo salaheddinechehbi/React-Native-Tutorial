@@ -9,6 +9,7 @@
 import React from 'react';
 import Home from './screens/Home';
 import Modal from './screens/Modal';
+import AnimatedList from './screens/Lists/AnimatedList';
 import DrawerLayouts from './screens/DrawerLayouts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -23,6 +24,7 @@ const App = () => {
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
         <Stack.Screen name="Modal" component={Modal} />
         <Stack.Screen name="DrawerLayout" component={DrawerLayouts} />
+        <Stack.Screen name="AnimatedList" component={AnimatedList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

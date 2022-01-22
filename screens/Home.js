@@ -21,7 +21,7 @@ const Home = ({navigation}) =>{
     }, []);
 
     return (
-        <View>
+        <View style={{ backgroundColor: '#fff'}}>
             <SafeAreaView style={styles.header}>
                 <View style={{ flex: 0.75}}>
                     <Text style={styles.headerText}>
@@ -49,14 +49,8 @@ const Home = ({navigation}) =>{
                         accessibilityLabel="Learn more about this purple button"
                     />
                     <Button style={{flex: 1}}
-                        onPress={() => navigation.navigate('DrawerLayout')}
-                        title="Flat List"
-                        color="#841584"
-                        accessibilityLabel="Learn more about this purple button"
-                    />
-                    <Button style={{flex: 1}}
-                        onPress={() => navigation.navigate('Modal')}
-                        title="Grid List"
+                        onPress={() => navigation.navigate('AnimatedList')}
+                        title="Animated List"
                         color="#841584"
                         accessibilityLabel="Learn more about this purple button"
                     />
