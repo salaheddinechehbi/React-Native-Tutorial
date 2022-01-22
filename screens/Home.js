@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Dimensions, Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import http from "../utils/http";
 import { styles } from "./styles/homeStyle"
 
@@ -48,22 +48,24 @@ const Home = () =>{
                     <Image source={require('../assets/img/Fast.jpg')} style={styles.headerImage} /> 
                 </View>
             </SafeAreaView>
-            <View style={styles.imageContainer}>
-                <View style={styles.imageView}>
-                    <Image source={require('../assets/img/dsa.jpg')} style={styles.imageItem} />
+            <ScrollView>
+                <View style={styles.imageContainer}>
+                    <View style={styles.imageView}>
+                        <Image source={require('../assets/img/dsa.jpg')} style={styles.imageItem} />
+                    </View>
+                    <View style={styles.imageView}>
+                        <Image source={require('../assets/img/Fast.jpg')} style={styles.imageItem} />
+                    </View>
                 </View>
-                <View style={styles.imageView}>
-                    <Image source={require('../assets/img/Fast.jpg')} style={styles.imageItem} />
+                <View style={styles.imageContainer}>
+                    <View style={styles.imageView}>
+                        <Image source={require('../assets/img/sal.jpg')} style={styles.imageItem} />
+                    </View>
+                    <View style={styles.imageView}>
+                        <Image source={require('../assets/img/dsa.jpg')} style={styles.imageItem} />
+                    </View>
                 </View>
-            </View>
-            <View style={styles.imageContainer}>
-                <View style={styles.imageView}>
-                    <Image source={require('../assets/img/sal.jpg')} style={styles.imageItem} />
-                </View>
-                <View style={styles.imageView}>
-                    <Image source={require('../assets/img/dsa.jpg')} style={styles.imageItem} />
-                </View>
-            </View>
+            </ScrollView>
             {/* <View style={styles.imageContainer}>
                 <View style={styles.imageView}>
                     <Image source={require('../assets/img/Fast.jpg')} style={styles.imageItem} />
