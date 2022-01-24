@@ -1,7 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Button, Image, SafeAreaView, ScrollView, Text, View } from "react-native";
+import { Button, Image, SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import http from "../utils/http";
 import { styles } from "./styles/homeStyle"
+
+const CustomStatusBar = (
+    {
+        backgroundColor,
+        barStyle = 'dark-content'
+    }
+) => {
+    const insets = useSafeAreaInsets()
+
+    return (
+        <View style={{ height: insets.top, backgroundColor}}>
+            <StatusBar
+                animated={true}
+                backgroundColor={backgroundColor}
+                barStyle={barStyle}
+            />
+        </View>
+    )
+}
 
 const Home = ({navigation}) =>{
 
@@ -22,6 +42,7 @@ const Home = ({navigation}) =>{
 
     return (
         <View style={{ backgroundColor: '#fff'}}>
+            <CustomStatusBar backgroundColor="white" />
             <SafeAreaView style={styles.header}>
                 <View style={{ flex: 0.75}}>
                     <Text style={styles.headerText}>
