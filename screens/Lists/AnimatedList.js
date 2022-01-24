@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Button, Image, SafeAreaView, ScrollView, FlatList, Text, View, StatusBar, StyleSheet, Animated } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import http from "../../utils/http";
+
+const CustomStatusBar = (
+    {
+        backgroundColor,
+        barStyle = 'dark-content'
+    }
+) => {
+    const insets = useSafeAreaInsets()
+
+    return (
+        <View style={{ height: insets.top, backgroundColor}}>
+            <StatusBar
+                animated={true}
+                backgroundColor={backgroundColor}
+                barStyle={barStyle}
+            />
+        </View>
+    )
+}
 
 const Home = ({navigation}) =>{
 
@@ -27,7 +47,7 @@ const Home = ({navigation}) =>{
 
     return (
         <View style={{flex: 1, backgroundColor: '#fff'}}>
-
+            {/* <CustomStatusBar backgroundColor="white" /> */}
             <Image
                 source={require('../../assets/img/pexels-photo-8.jpeg')}
                 style={StyleSheet.absoluteFillObject}
@@ -82,8 +102,8 @@ const Home = ({navigation}) =>{
                                         width: 0,
                                         height: 10
                                     },
-                                    //shadowOpacity: 0.3,
-                                    elevation: 2,
+                                    shadowOpacity: 0.3,
+                                    //elevation: 2,
                                     //zIndex: 999,
                                     shadowRadius: 20,
                                     opacity,
@@ -95,8 +115,8 @@ const Home = ({navigation}) =>{
                             style={{width: AVATAR_SIZE, height: AVATAR_SIZE, borderRadius: 50, marginRight: 5}}
                         />
                         <View>
-                            <Text style={{ fontSize: 22, fontWeight: '700'}}>{item.name}</Text>
-                            <Text style={{ fontSize: 18, fontWeight: '500', opacity: 0.8}}>{item.name}</Text>
+                            <Text style={{ fontSize: 18, fontWeight: '700', color: '#000'}}>{item.name}</Text>
+                            <Text style={{ fontSize: 16, fontWeight: '500', opacity: 0.8, color: '#000'}}>{item.name}</Text>
                             <Text style={{ fontSize: 14, fontWeight: '500', color: '#0099cc', opacity: 0.8}}>{item.name}</Text>
                         </View>
                     </Animated.View>

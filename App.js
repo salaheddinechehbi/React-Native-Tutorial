@@ -24,7 +24,7 @@ const App = () => {
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
         <Stack.Screen name="Modal" component={Modal} />
         <Stack.Screen name="DrawerLayout" component={DrawerLayouts} />
-        <Stack.Screen name="AnimatedList" component={AnimatedList} />
+        <Stack.Screen name="AnimatedList" component={AnimatedList} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
