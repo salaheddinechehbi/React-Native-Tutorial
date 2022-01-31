@@ -3,14 +3,8 @@ import { Button, Image, SafeAreaView, ScrollView, FlatList, Text, View, StatusBa
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import http from "../../utils/http";
 
-const CustomStatusBar = (
-    {
-        backgroundColor,
-        barStyle = 'dark-content'
-    }
-) => {
+const CustomStatusBar = ( { backgroundColor, barStyle = 'dark-content' }) => {
     const insets = useSafeAreaInsets()
-
     return (
         <View style={{ height: insets.top, backgroundColor}}>
             <StatusBar
@@ -22,6 +16,59 @@ const CustomStatusBar = (
     )
 }
 
+const DATA = [
+    {
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb2458ba',
+      name: 'First Item',
+      icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+    },
+    {
+      id: '3ac68afc-c605-48d3-a4f8-fbd913aa197f63',
+      name: 'Second Item',
+      icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+    },
+    {
+      id: '58694a0f-3da1-471f-bd96-145571e18729d72',
+      name: 'Third Item',
+      icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+    },
+    {
+        id: 'bd7acbea-c1b1-46c2-aed5-3ad53a36bb95528ba',
+        name: 'First Item',
+        icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+      },
+      {
+        id: '3ac68afc-c605-48d3-a4f8-fbd91a12770a97f63',
+        name: 'Second Item',
+        icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+      },
+      {
+        id: '58694a0f-3da1-471f-bd96-1455557211e29d72',
+        name: 'Third Item',
+        icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+      },
+      {
+        id: 'bd7acbea-c1b1-46c2-aed5-3ad53ab0b28ba',
+        name: 'First Item',
+        icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+      },
+      {
+        id: '3ac68afc-c605-48d3-a4f8-fbd910aa97f63',
+        name: 'Second Item',
+        icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+      },
+      {
+        id: '58694a0f-3da1-471f-bd96-145571e2629d72',
+        name: 'Third Item',
+        icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+      },
+      {
+          id: 'bd7acbea-c1b1-46c2-aed5-3ad53a4bb5528ba',
+          name: 'First Item',
+          icon: "https://api.hotellom.com/img/categories/wBEJMRXQ3mxaOILeugAq44h3Lu90Vey53EPBaJAC.jpg"
+        }
+  ];
+
 const Home = ({navigation}) =>{
 
     const SPACING = 20
@@ -32,9 +79,9 @@ const Home = ({navigation}) =>{
     useEffect( () => {
         async function getOrders() {
             try {
-              let dataCategs = await http.get('/categories')
+              let dataCategs = await http.get('/catsList')
               setData(dataCategs.data);
-              console.log(dataCategs)
+              console.log(dataCategs.data)
             } catch (error) {
               alert(error);
             }
@@ -55,12 +102,12 @@ const Home = ({navigation}) =>{
             />
 
             <Animated.FlatList 
-                data={data}
+                data={DATA}
+                keyExtractor={item => item.id}
                 onScroll={Animated.event(
                     [{ nativeEvent: {contentOffset: {y: scrollY}} }],
                     { useNativeDriver: true }
                 )}
-                keyExtractor={item => item.id}
                 contentContainerStyle={{
                     padding: SPACING,
                     paddingTop: StatusBar.currentHeight || 42
