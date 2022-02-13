@@ -76,7 +76,7 @@ const Home = ({navigation}) =>{
     const BG_IMAGE = "https://www.pexels.com/photo/white-and-pink-flower-on-white-ceramic-plate-9988443/"
     const [data, setData] = useState([])
     
-    useEffect( () => {
+    /* useEffect( () => {
         async function getOrders() {
             try {
               let dataCategs = await http.get('/catsList')
@@ -87,7 +87,7 @@ const Home = ({navigation}) =>{
             }
           }
         getOrders();
-    }, []);
+    }, []); */
 
     const scrollY = React.useRef(new Animated.Value(0)).current
     const ITEM_SIZE = AVATAR_SIZE + SPACING  * 3

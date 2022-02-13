@@ -27,7 +27,7 @@ const Home = ({navigation}) =>{
 
     const [data, setData] = useState([])
     
-    useEffect( () => {
+    /* useEffect( () => {
         async function getOrders() {
             try {
               let dataCategs = await http.get('/categories')
@@ -38,7 +38,7 @@ const Home = ({navigation}) =>{
             }
           }
         getOrders();
-    }, []);
+    }, []); */
 
     return (
         <View style={{ backgroundColor: '#fff'}}>
@@ -77,22 +77,28 @@ const Home = ({navigation}) =>{
                     />
                     
                 </View>
-            
-                <View style={styles.imageContainer}>
-                    <View style={styles.imageView}>
-                        <Image source={require('../assets/img/dsa.jpg')} style={styles.imageItem} />
-                    </View>
-                    <View style={styles.imageView}>
-                        <Image source={require('../assets/img/Fast.jpg')} style={styles.imageItem} />
-                    </View>
-                </View>
-                <View style={styles.imageContainer}>
-                    <View style={styles.imageView}>
-                        <Image source={require('../assets/img/sal.jpg')} style={styles.imageItem} />
-                    </View>
-                    <View style={styles.imageView}>
-                        <Image source={require('../assets/img/dsa.jpg')} style={styles.imageItem} />
-                    </View>
+                <View style={{padding: 20, flexDirection: "row",flex: 1, 
+                                alignItems: "center", alignContent: "center", 
+                                justifyContent: "space-around"}}>
+                    <Button style={{flex: 1}}
+                        onPress={() => navigation.navigate('CardImage')}
+                        title="Card Image"
+                        color="#841584"
+                        accessibilityLabel="Learn more about this purple button"
+                    />
+                    <Button style={{flex: 1}}
+                        onPress={() => navigation.navigate('Covid')}
+                        title="Covid"
+                        color="#841584"
+                        accessibilityLabel="Learn more about this purple button"
+                    />
+                    <Button style={{flex: 1}}
+                        onPress={() => navigation.navigate('Wallet')}
+                        title="Wallet"
+                        color="#841584"
+                        accessibilityLabel="Learn more about this purple button"
+                    />
+                    
                 </View>
             </ScrollView>
             {/* <View style={styles.imageContainer}>
