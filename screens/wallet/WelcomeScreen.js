@@ -19,14 +19,14 @@ const WelcomeScreen = ({navigation}) => {
 
   return (
     <ImageBackground
-      source={require('../../assets/bg_welcome.png')}
+      source={require('../../assets/img/wallet/bg_welcome.png')}
       style={[styles.container, {paddingTop: insets.top}]}>
       <View style={styles.wrapper}>
         <View style={styles.logoView}>
           <View onLayout={({nativeEvent}) => setLayout(nativeEvent?.layout)}>
             {layouts && (
               <Image
-                source={require('../../assets/card_welcome_1.png')}
+                source={require('../../assets/img/wallet/card_welcome_1.png')}
                 style={[
                   styles.cardImg1,
                   {width: layouts.width, height: layouts.height},
@@ -34,7 +34,7 @@ const WelcomeScreen = ({navigation}) => {
                 resizeMode="contain"
               />
             )}
-            <Image source={require('../../assets/card_welcome_2.png')} />
+            <Image source={require('../../assets/img/wallet/card_welcome_2.png')} />
           </View>
         </View>
         <View style={styles.wrapText}>

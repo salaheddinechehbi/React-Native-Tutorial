@@ -4,23 +4,23 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 const listService = [
   {
     name: 'Wallet',
-    icon: require('../../assets/ic_wallet.png'),
+    icon: require('../../assets/img/wallet/ic_wallet.png'),
   },
   {
     name: 'Transfer',
-    icon: require('../../assets/ic_transfer.png'),
+    icon: require('../../assets/img/wallet/ic_transfer.png'),
   },
   {
     name: 'Pay',
-    icon: require('../../assets/ic_pay.png'),
+    icon: require('../../assets/img/wallet/ic_pay.png'),
   },
   {
     name: 'Top Up',
-    icon: require('../../assets/ic_topup.png'),
+    icon: require('../../assets/img/wallet/ic_topup.png'),
   },
   {
     name: 'Top Up 2',
-    icon: require('../../assets/ic_pay.png'),
+    icon: require('../../assets/img/wallet/ic_pay.png'),
   },
 ];
 

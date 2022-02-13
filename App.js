@@ -31,8 +31,8 @@ const App = () => {
         <Stack.Screen name="AnimatedList" component={AnimatedList} options={{headerShown: true}} />
         <Stack.Screen name="CardImage" component={ImageCard} />
         <Stack.Screen name="Covid" component={Covid} />
-        <Stack.Screen name="Wallet" component={Wallet} options={{headerShown: false}} />
-        <Stack.Screen name="WalletHome" component={WalletHome} options={{headerShown: false}} />
+        <Stack.Screen name="Wallet" component={Wallet} options={{headerShown: true}} />
+        <Stack.Screen name="WalletHome" component={WalletHome} options={{headerShown: true}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

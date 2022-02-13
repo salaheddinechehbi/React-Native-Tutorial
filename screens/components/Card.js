@@ -20,10 +20,10 @@ const card_size = {
 const Card = () => {
   return (
     <ImageBackground
-      source={require('../../assets/card_visa_bg.png')}
+      source={require('../../assets/img/wallet/card_visa_bg.png')}
       style={styles.card}>
       <View style={styles.cardIcon}>
-        <Image source={require('../../assets/card_icon.png')} />
+        <Image source={require('../../assets/img/wallet/card_icon.png')} />
       </View>
       <View style={styles.cardNumber}>
         <Text style={styles.cardNumberText}>{`1234 5678 1234 5678`}</Text>
@@ -33,7 +33,7 @@ const Card = () => {
           <Text style={styles.cardHolderName}>Card holder</Text>
           <Text style={styles.cardName}>Nguyen Van A</Text>
         </View>
-        <Image source={require('../../assets/visa_text.png')} />
+        <Image source={require('../../assets/img/wallet/visa_text.png')} />
       </View>
     </ImageBackground>
   );

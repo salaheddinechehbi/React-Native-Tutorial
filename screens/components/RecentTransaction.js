@@ -4,19 +4,19 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 const listTransations = [
   {
     type: 'Spotify',
-    icon: require('../../assets/ic_spotify.png'),
+    icon: require('../../assets/img/wallet/ic_spotify.png'),
     date: 'Jun 12, 12:30',
     payment: '+ $12',
   },
   {
     type: 'Paypal',
-    icon: require('../../assets/ic_paypal.png'),
+    icon: require('../../assets/img/wallet/ic_paypal.png'),
     date: 'Jun 12, 12:30',
     payment: '+ $12',
   },
   {
     type: 'Dribble',
-    icon: require('../../assets/ic_dribble.png'),
+    icon: require('../../assets/img/wallet/ic_dribble.png'),
     date: 'Jun 12, 12:30',
     payment: '+ $14',
   },

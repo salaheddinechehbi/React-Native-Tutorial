@@ -59,20 +59,20 @@ const Home = ({navigation}) =>{
                                 justifyContent: "space-around"}}>
                     <Button style={{flex: 1}}
                         onPress={() => navigation.navigate('DrawerLayout')}
-                        title="Flat List"
-                        color="#841584"
+                        title="Drawer"
+                        color="#156584"
                         accessibilityLabel="Learn more about this purple button"
                     />
                     <Button style={{flex: 1}}
                         onPress={() => navigation.navigate('Modal')}
                         title="Grid List"
-                        color="#841584"
+                        color="#361596"
                         accessibilityLabel="Learn more about this purple button"
                     />
                     <Button style={{flex: 1}}
                         onPress={() => navigation.navigate('AnimatedList')}
                         title="Animated List"
-                        color="#841584"
+                        color="#845584"
                         accessibilityLabel="Learn more about this purple button"
                     />
                     
@@ -83,13 +83,13 @@ const Home = ({navigation}) =>{
                     <Button style={{flex: 1}}
                         onPress={() => navigation.navigate('CardImage')}
                         title="Card Image"
-                        color="#841584"
+                        color="#111"
                         accessibilityLabel="Learn more about this purple button"
                     />
                     <Button style={{flex: 1}}
                         onPress={() => navigation.navigate('Covid')}
                         title="Covid"
-                        color="#841584"
+                        color="#321854"
                         accessibilityLabel="Learn more about this purple button"
                     />
                     <Button style={{flex: 1}}

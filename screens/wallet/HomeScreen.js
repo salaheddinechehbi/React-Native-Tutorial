@@ -14,7 +14,7 @@ const HomeScreen = () => {
             <Text>Hello</Text>
             <Text style={styles.userName}>My Name</Text>
           </View>
-          <Image source={require('../../assets/ic_notif.png')} />
+          <Image source={require('../../assets/img/wallet/ic_notif.png')} />
         </View>
         <View style={styles.card}>
           <Card />

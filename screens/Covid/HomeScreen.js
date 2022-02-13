@@ -9,7 +9,7 @@ const HomeScreen = () => {
         <View style={styles.header}>
           <View style={styles.headerTop}>
             <Image
-              source={require('../../assets/cast.png')}
+              source={require('../../assets/img/covid/cast.png')}
               resizeMode="contain"
               style={styles.img}
             />
