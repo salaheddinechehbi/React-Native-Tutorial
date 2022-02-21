@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Button, Image, SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
+import { Alert, Button, Image, SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import http from "../utils/http";
+//import http from "../utils/http";
+import axios from "axios";
 import { styles } from "./styles/homeStyle"
+import { WebView } from 'react-native-webview';
 
 const CustomStatusBar = (
     {
@@ -26,7 +28,28 @@ const CustomStatusBar = (
 const Home = ({navigation}) =>{
 
     const [data, setData] = useState([])
-    
+    const [ur, setUr] = useState('http://172.16.255.254:8002/index.php?zone=vgc')
+     
+    const submitForm = () => {
+        //Alert.alert("Salah Eddine")
+        const formData = new FormData()
+        formData.append('auth_user', "")
+        formData.append('auth_pass', "")
+        formData.append('redirurl', "https://www.youtube.com/")
+        formData.append('zone', "vgc")
+        const ur = "https://www.youtube.com/"
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        }
+        axios.post('http://172.16.255.254:8002/index.php?zone=vgc', formData, config).then(res => {
+            console.log("full")
+            
+        }).catch(err => {
+            console.log(err)
+        })
+    }
     /* useEffect( () => {
         async function getOrders() {
             try {
@@ -39,6 +62,11 @@ const Home = ({navigation}) =>{
           }
         getOrders();
     }, []); */
+
+    const f = 'http://172.16.255.254:8002/index.php?zone=vgc'
+    useEffect( () => {
+        
+    }, [])
 
     return (
         <View style={{ backgroundColor: '#fff'}}>
@@ -99,6 +127,21 @@ const Home = ({navigation}) =>{
                         accessibilityLabel="Learn more about this purple button"
                     />
                     
+                </View>
+                <View style={{padding: 20, flexDirection: "row",flex: 1, 
+                                alignItems: "center", alignContent: "center", 
+                                justifyContent: "space-around"}}>
+                    <Button style={{flex: 1}}
+                        onPress={submitForm}
+                        title="Portail"
+                        color="#841584"
+                        accessibilityLabel="Learn more about this purple button"
+                    />
+                </View>
+                <View style={{padding: 20, flexDirection: "row",flex: 1, 
+                                alignItems: "center", alignContent: "center", 
+                                justifyContent: "space-around"}}>
+                    <WebView style={{height: 10, display: 'none'}} source={{ uri: ur }} />
                 </View>
             </ScrollView>
             {/* <View style={styles.imageContainer}>
